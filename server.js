@@ -16,11 +16,12 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(express.static("public"));
 //
 // Application routes
 //
-require("./routes/html")(app);
 require("./routes/api")(app);
+require("./routes/html")(app);
 //
 // Rock & Roll
 //

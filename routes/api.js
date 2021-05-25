@@ -1,15 +1,5 @@
 //
-// API routes
-//
-const notesData = () => {
-  //
-  return fetch("./db/db").then((res) => {
-    //
-    return res.json();
-    //
-  });
-  //
-};
+const JSON_DB = require("../db/db.json");
 //
 module.exports = (app) => {
   //
@@ -17,15 +7,15 @@ module.exports = (app) => {
   //
   app.get("/api/notes", (req, res) => {
     //
-    return notesData;
+    res.send(JSON_DB);
     //
   });
   //
-  app.post("/api/notes", (req, res) => {
-    //
-    return notesTable;
-    //
-  });
+  // app.post("/api/notes", (req, res) => {
+  //   //
+  //   return notesTable;
+  //   //
+  // });
   //
 };
 //
