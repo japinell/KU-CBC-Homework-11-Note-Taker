@@ -14,7 +14,7 @@ module.exports = (app) => {
     //
   });
   //
-  //  Searchs and returns notes which title or text match the parameter "id"
+  //  Searches and returns notes which id matches the parameter "id"
   //
   app.get("/api/notes/:id", (req, res) => {
     //
@@ -40,14 +40,14 @@ module.exports = (app) => {
     //
   });
   //
-  //  Deletes the notes which id matches the parameter "id"
+  //  Deletes notes which id matches the parameter "id"
   //
   app.delete("/api/notes/:id", (req, res) => {
     //
     const searchId = req.params.id;
     const foundNotes = notesTable.filter((note) => note.id === searchId);
     //
-    // foundNotes.forEach((note) => notesTable);
+    //foundNotes.forEach((note) => notesTable);
     //
     res.json(true);
     //
