@@ -1,5 +1,6 @@
 //
 const notesTable = require("../db/db.json");
+const uniqid = require("uniqid");
 //
 // API routes
 //
@@ -17,10 +18,8 @@ module.exports = (app) => {
   //
   app.get("/api/notes/:id", (req, res) => {
     //
-    const searchNote = req.params.id;
-    const foundNotes = notesTable.filter(
-      (note) => note.title === searchNote || note.text === searchNote
-    );
+    const searchId = req.params.id;
+    const foundNotes = notesTable.filter((note) => note.id === searchId);
     //
     res.send(foundNotes);
     //
@@ -31,19 +30,22 @@ module.exports = (app) => {
   app.post("/api/notes", (req, res) => {
     //
     const note = req.body;
+    const id = uniqid();
     //
+    note.id = id;
     notesTable.push(note);
     //
+    console.log(notesTable);
     res.json(true);
     //
   });
   //
-  //  Deletes the notes which title or text match the parameter "id"
+  //  Deletes the notes which id matches the parameter "id"
   //
   app.delete("/api/notes/:id", (req, res) => {
     //
-    const searchNote = req.params.id;
-    const foundNotes = notesTable.filter((note) => note === searchNote);
+    const searchId = req.params.id;
+    const foundNotes = notesTable.filter((note) => note.id === searchId);
     //
     // foundNotes.forEach((note) => notesTable);
     //
