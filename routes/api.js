@@ -1,6 +1,26 @@
 //
-const notesTable = require("../db/db.json");
+const JSON_DB = "./db/db.json";
+const fs = require("fs");
+const util = require("util");
 const uniqid = require("uniqid");
+const readFileAsync = util.promisify(fs.readFile); // ReadFile using promises instead of a callback function
+const writeFileAsync = util.promisify(fs.writeFile); // WriteFile using promises instead of a callback function
+const notesTable = [];
+//
+const readJsonDB = () => {
+  //
+  return new Promise((resolve, reject) => {
+    //
+    fs.readFile(JSON_DB, "utf8", (error, data) => {
+      if (error != null) {
+        reject(error);
+        return;
+      }
+      resolve(data);
+    });
+    //
+  });
+};
 //
 // API routes
 //
@@ -10,7 +30,12 @@ module.exports = (app) => {
   //
   app.get("/api/notes", (req, res) => {
     //
-    res.send(notesTable);
+    readJsonDB().then((data) => {
+      //
+      notesTable.push(data);
+      res.send(notesTable);
+      //
+    });
     //
   });
   //
@@ -44,11 +69,19 @@ module.exports = (app) => {
   //
   app.delete("/api/notes/:id", (req, res) => {
     //
+    console.log(req.params);
     const searchId = req.params.id;
-    const foundNotes = notesTable.filter((note) => note.id === searchId);
     //
-    //foundNotes.forEach((note) => notesTable);
-    //
+    for (let i = 0, l = notesTable.length; i < l; i++) {
+      //
+      if (searchId === notesTable[i].id) {
+        //
+        notesTable.splice(i, 1);
+        //
+      }
+      //
+    }
+    console.log(notesTable);
     res.json(true);
     //
   });
