@@ -2,10 +2,7 @@
 
 ## Your Task
 
-Your assignment is to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
-
-The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
-
+Modify starter code to create a Note Taker application that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file. Deploy the entire application to Heroku.
 
 ## User Story
 
@@ -14,7 +11,6 @@ AS A small business owner
 I WANT to be able to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ```
-
 
 ## Acceptance Criteria
 
@@ -34,97 +30,67 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 ```
 
+## Table of Contents
 
-## Mock-Up
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
 
-The following images show the web application's appearance and functionality: 
+## Installation
 
-![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./Assets/11-express-homework-demo-01.png)
+This application requires **Node.js** JavaScript Runtime and **Express.js** package. Basic knowledge of Node.js is recommended to run the application. To faciliate the installation of the application, a _package.json_ file is provided with the project. Execute the following command in your console to install Express:
 
-![Note titled “Balance accounts” reads, “Balance account books by end of day Monday,” with other notes listed on the left.](./Assets/11-express-homework-demo-02.png)
+````bash
+npm i express
 
+## Usage
 
-## Getting Started
+To run the application locally, run the following command:
 
-The application should have a `db.json` file on the back end that will be used to store and retrieve notes using the `fs` module.
+```bash
+node server.js
+````
 
-The following HTML routes should be created:
+Next, open your browser and enter **http://localhost:8080/** in the addess bar; the main page opens up:
 
-* `GET /notes` should return the `notes.html` file.
+![Main page.](./public/assets/index.png)
 
-* `GET *` should return the `index.html` file.
+click or tap the _Get Started_ button. The note-taking page opens up:
 
-The following API routes should be created:
+![Notes page.](./public/assets/notes1.png)
 
-* `GET /api/notes` should read the `db.json` file and return all saved notes as JSON.
+The application shows all the notes saved to the file database in the left-hand column allowing the user to enter a new title and text in the right-hand column. After entering the title and text, the **Save** button is enabled, which allows the user to save the note to the database. The new note appears in the left-hand side column with the other existing notes.
 
-* `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into `npm` packages that could do this for you).
+Existing notes can be deleted by clicking the **Delete** button.
 
+If you want to cancel the application execution, press the following command in Microsoft Windows, or equivalent commands in Mac OS and Linux:
 
-## Bonus
+```bash
+CTRL + C
+```
 
-You haven’t learned how to handle DELETE requests, but this application has that functionality in the front end. As a bonus, see if you can add the DELETE route to the application using the following guideline:
+A link to a walkthrough video demonstrating the application functionality is provided [here](https://drive.google.com/file/d/1C78ZRwOAJkPUPp96jouGpzFw-bIt1IXp/view). In addition, a video demonstrating how to test the application is provided [here](https://drive.google.com/file/d/130wfX9qfxNKQa8vcTvxbt3pc2eJsWXZa/view).
 
-* `DELETE /api/notes/:id` should receive a query parameter containing the id of a note to delete. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+## License
 
+This project is licensed under The MIT License. Refer to https://opensource.org/licenses/MIT for more information of what you can and cannot do with this project. See contact information below if you have questions, comments, or suggestions for the project.
 
-## Grading Requirements
+## Contributing Guidelines
 
-This homework is graded based on the following criteria: 
+Want to contribute to this project? You may clone or fork the project in GitHub. Note the licesing information referred in this file.
 
+## Contact Information
 
-### Technical Acceptance Criteria: 40%
+For questions, comments, or suggestions, please contact me by E-Mail:
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+japinell@yahoo.com
 
-  * Application front end must connect to an Express.js back end.
+Check out my other **cool** projects in GitHub - https://github.com/japinell
 
-  * Application back end must store notes with unique IDs in a JSON file.
+## License
 
-  * Application must be deployed to Heroku.
+This application is licensed under the following license:
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)(https://opensource.org/licenses/MIT)
 
-### Deployment: 36%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-
-### Application Quality: 11%
-
-* Application console is free of errors.
-
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-### Bonus: +10 Points
-
-* Application allows users to delete notes.
-
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+For more information, please follow the link provided above.
