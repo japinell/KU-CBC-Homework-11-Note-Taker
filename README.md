@@ -38,10 +38,11 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## Installation
 
-This application requires **Node.js** JavaScript Runtime and **Express.js** package. Basic knowledge of Node.js is recommended to run the application. To faciliate the installation of the application, a _package.json_ file is provided with the project. Execute the following command in your console to install Express:
+This application requires **Node.js** JavaScript Runtime and **Express.js** package. Basic knowledge of Node.js is recommended to run the application. To faciliate the installation of the application, a _package.json_ file is provided with the project along with instructions of how to install Express:
 
-````bash
-npm i express
+```bash
+npm i inquirer
+```
 
 ## Usage
 
@@ -49,9 +50,9 @@ To run the application locally, run the following command:
 
 ```bash
 node server.js
-````
+```
 
-Next, open your browser and enter **http://localhost:8080/** in the addess bar; the main page opens up:
+Next, open up your browser and enter **http://localhost:8080/** in the addess bar; the main page opens up:
 
 ![Main page.](./public/assets/index.png)
 
