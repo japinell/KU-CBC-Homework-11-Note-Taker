@@ -44,11 +44,21 @@ const writeJsonDB = () => {
   });
 };
 //
+Array.prototype.remove = function (key, value) {
+  //
+  const index = this.findIndex((obj) => obj.id.localeCompare(value) === 0);
+  //
+  return index >= 0
+    ? [...this.slice(0, index), ...this.slice(index + 1)]
+    : this;
+  //
+};
+//
 // API routes
 //
 module.exports = (app) => {
   //
-  //  Returns all notes
+  //  Return all notes
   //
   app.get("/api/notes", (req, res) => {
     //
@@ -72,7 +82,7 @@ module.exports = (app) => {
     //
   });
   //
-  //  Searches and returns notes which id matches the parameter "id"
+  //  Search and return notes which id matches the parameter "id"
   //
   app.get("/api/notes/:id", (req, res) => {
     //
@@ -83,7 +93,7 @@ module.exports = (app) => {
     //
   });
   //
-  //  Inserts a note
+  //  Insert a note
   //
   app.post("/api/notes", (req, res) => {
     //
@@ -111,22 +121,33 @@ module.exports = (app) => {
     //
   });
   //
-  //  Deletes notes which id matches the parameter "id"
+  //  Delete a note which id matches the parameter "id"
   //
   app.delete("/api/notes/:id", (req, res) => {
     //
-    console.log(req.params);
     const searchId = req.params.id;
+    const newNotesTable = notesTable.remove("id", searchId);
     //
-    for (let i = 0, l = notesTable.length; i < l; i++) {
+    notesTable.length = 0;
+    for (const note of newNotesTable) {
       //
-      if (searchId === notesTable[i].id) {
+      notesTable.push(note);
+      //
+    }
+    //
+    writeJsonDB().then((err) => {
+      //
+      if (err) {
         //
-        notesTable.splice(i, 1);
+        console.log(`Error: ${err}`);
+        //
+      } else {
+        //
+        console.log(`${searchId} deleted from ${JSON_DB} file`);
         //
       }
       //
-    }
+    });
     //
     res.json(true);
     //
