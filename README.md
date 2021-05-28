@@ -60,6 +60,10 @@ click or tap the _Get Started_ button. The note-taking page opens up:
 
 ![Notes page.](./public/assets/notes1.png)
 
+You can also run the application hosted in Heroku by following this link:
+
+https://ku-cbc-homework-11-note-taker.herokuapp.com/
+
 The application shows all the notes saved to the file database in the left-hand column allowing the user to enter a new title and text in the right-hand column. After entering the title and text, the **Save** button is enabled, which allows the user to save the note to the database. The new note appears in the left-hand side column with the other existing notes.
 
 Existing notes can be deleted by clicking the **Delete** button.
