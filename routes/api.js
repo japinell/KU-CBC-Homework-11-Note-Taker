@@ -12,11 +12,33 @@ const readJsonDB = () => {
   return new Promise((resolve, reject) => {
     //
     fs.readFile(JSON_DB, "utf8", (error, data) => {
+      //
       if (error != null) {
         reject(error);
         return;
       }
-      resolve(data);
+      //
+      if (data) {
+        //
+        resolve(JSON.parse(data));
+        //
+      }
+    });
+    //
+  });
+};
+//
+const writeJsonDB = () => {
+  //
+  return new Promise((resolve, reject) => {
+    //
+    fs.writeFile(JSON_DB, JSON.stringify(notesTable), "utf8", (error) => {
+      //
+      if (error != null) {
+        reject(error);
+        return;
+      }
+      //
     });
     //
   });
@@ -32,8 +54,19 @@ module.exports = (app) => {
     //
     readJsonDB().then((data) => {
       //
-      notesTable.push(data);
-      res.send(notesTable);
+      if (data) {
+        //
+        notesTable.length = 0;
+        //
+        for (const note of data) {
+          //
+          notesTable.push(note);
+          //
+        }
+        //
+        res.send(notesTable);
+        //
+      }
       //
     });
     //
@@ -60,7 +93,20 @@ module.exports = (app) => {
     note.id = id;
     notesTable.push(note);
     //
-    console.log(notesTable);
+    writeJsonDB().then((err) => {
+      //
+      if (err) {
+        //
+        console.log(`Error: ${err}`);
+        //
+      } else {
+        //
+        console.log(`Data written to ${JSON_DB} file`);
+        //
+      }
+      //
+    });
+    //
     res.json(true);
     //
   });
@@ -81,7 +127,7 @@ module.exports = (app) => {
       }
       //
     }
-    console.log(notesTable);
+    //
     res.json(true);
     //
   });
