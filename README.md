@@ -2,7 +2,7 @@
 
 ## Description
 
-The purpose of this application is to modify starter code to create a **Note Taker** application that can be used to write and save notes. This application will use an **Express.js** back end and will save and retrieve note data from a **JSON** file. The application should be deployed and run from Heroku.
+The purpose of this application is to modify starter code to create a **Note Taker** application that can be used to write and save notes. This application will use an **Express.js** back end and will save and retrieve note data from a **JSON** file. The application should be deployed and run from **Heroku**.
 
 ## User Story
 
@@ -51,6 +51,8 @@ npm i uniqid
 ```
 
 This library is used to give each note a unique identifier.
+
+In addition to the libraries described above, the application also uses the [fs](https://nodejs.org/api/fs.html) and [path](https://nodejs.org/api/path.html) APIs to read and write notes to the JSON database, and to access and retrieve _static_ files, respectively.
 
 ## Usage
 
