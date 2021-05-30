@@ -56,6 +56,8 @@ In addition to the libraries described above, the application also uses the [fs]
 
 The application features the use of **Server APIs**, route handling, unique record generation, JSON file manipulation, and **Heroku** deployment.
 
+Future features will include writing and reading the notes to and from a MySQL database.
+
 ## Usage
 
 The application is invoked by using the following command:
