@@ -54,6 +54,8 @@ This library is used to give each note a unique identifier.
 
 In addition to the libraries described above, the application also uses the [fs](https://nodejs.org/api/fs.html) and [path](https://nodejs.org/api/path.html) APIs to read and write notes to the JSON database, and to access and retrieve _static_ files, respectively.
 
+The application features the use of **Server APIs**, route handling, unique record generation, JSON file manipulation, and **Heroku** deployment.
+
 ## Usage
 
 The application is invoked by using the following command:
