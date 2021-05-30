@@ -62,11 +62,11 @@ node server.js
 
 Next, open up your browser and enter **http://localhost:8080/** in the addess bar; the main page opens up:
 
-![Main page.](./assets/index.png)
+![Main page.](./public/assets/img/index.png)
 
 click or tap the _Get Started_ button. The note-taking page opens up:
 
-![Notes page.](./assets/notes1.png)
+![Notes page.](./public/assets/img/notes1.png)
 
 You can also run the application hosted in Heroku by following this link:
 
