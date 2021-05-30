@@ -1,8 +1,8 @@
 # 11 Express.js: Note Taker
 
-## Your Task
+## Description
 
-Modify starter code to create a Note Taker application that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file. Deploy the entire application to Heroku.
+Modify starter code to create a **Note Taker** application that can be used to write and save notes. This application will use an **Express.js** back end and will save and retrieve note data from a **JSON** file. The application should be deployed to and run from Heroku.
 
 ## User Story
 
@@ -38,15 +38,23 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## Installation
 
-This application requires **Node.js** JavaScript Runtime and **Express.js** package. Basic knowledge of Node.js is recommended to run the application. To faciliate the installation of the application, a _package.json_ file is provided with the project along with instructions of how to install Express:
+This application requires **Node.js** JavaScript Runtime and **Express.js** package. Basic knowledge of [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) is recommended to run the application. To faciliate the installation and run of the application, a _package.json_ file is provided with the project along with basic instructions of how to install the required libraries:
 
 ```bash
-npm i inquirer
+npm i express
 ```
+
+Other libraries required include [Uniqid.js](https://www.npmjs.com/package/uniqid), a library to "create unique id's based on the current time, process and machine name."
+
+```bash
+npm i uniqid
+```
+
+This library is used to give each note a unique identifier.
 
 ## Usage
 
-To run the application locally, run the following command:
+The application is invoked by using the following command:
 
 ```bash
 node server.js
