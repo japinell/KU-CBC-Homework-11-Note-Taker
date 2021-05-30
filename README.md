@@ -62,27 +62,27 @@ node server.js
 
 Next, open up your browser and enter **http://localhost:8080/** in the addess bar; the main page opens up:
 
-![Main page.](./public/assets/index.png)
+![Main page.](./assets/index.png)
 
 click or tap the _Get Started_ button. The note-taking page opens up:
 
-![Notes page.](./public/assets/notes1.png)
+![Notes page.](./assets/notes1.png)
 
 You can also run the application hosted in Heroku by following this link:
 
 https://ku-cbc-homework-11-note-taker.herokuapp.com/
 
-The application shows all the notes saved to the file database in the left-hand column allowing the user to enter a new title and text in the right-hand column. After entering the title and text, the **Save** button is enabled, which allows the user to save the note to the database. The new note appears in the left-hand side column with the other existing notes.
+The application shows all the notes saved to the database file (a _JSON_ file) in the left-hand panel. A new note can be added by entering the title and text in the right-hand panel. After entering the title and text, the **Save** button is enabled, which allows the user to save the note to the database. The new note appears in the left-hand panel along with the previously saved notes.
 
 Existing notes can be deleted by clicking the **Delete** button.
 
-If you want to cancel the application execution, press the following command in Microsoft Windows, or equivalent commands in Mac OS and Linux:
+A link to a walkthrough video demonstrating the application functionality is provided [here](https://drive.google.com/file/d/1C78ZRwOAJkPUPp96jouGpzFw-bIt1IXp/view). In addition, a video demonstrating how to test the application is provided [here](https://drive.google.com/file/d/130wfX9qfxNKQa8vcTvxbt3pc2eJsWXZa/view).
+
+If you want to cancel the application execution while running it locally, press the following command in Microsoft Windows, or equivalent commands in Mac OS and Linux:
 
 ```bash
 CTRL + C
 ```
-
-A link to a walkthrough video demonstrating the application functionality is provided [here](https://drive.google.com/file/d/1C78ZRwOAJkPUPp96jouGpzFw-bIt1IXp/view). In addition, a video demonstrating how to test the application is provided [here](https://drive.google.com/file/d/130wfX9qfxNKQa8vcTvxbt3pc2eJsWXZa/view).
 
 ## License
 
@@ -105,5 +105,3 @@ Check out my other **cool** projects in GitHub - https://github.com/japinell
 This application is licensed under the following license:
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)(https://opensource.org/licenses/MIT)
-
-For more information, please follow the link provided above.
